@@ -190,10 +190,10 @@ if __name__ == "__main__":
     parser.add_argument("--end", type=int, default=92, help="End ID")
     parser.add_argument("--workers", type=int, default=5, help="Concurrent workers")
     parser.add_argument("--proxy", type=str, help="Proxy URL (e.g. socks5://127.0.0.1:10808)")
-    parser.add_argument("--min-delay", type=float, default=0.5)
-    parser.add_argument("--max-delay", type=float, default=1.5)
+    parser.add_argument("--min-delay", type=float, default=0.8)
+    parser.add_argument("--max-delay", type=float, default=1.1)
     parser.add_argument("--output", type=str, default=RESULTS_FILE, help="Output JSONL file")
-    parser.add_argument("--batch-size", type=int, default=1000, help="Number of IDs to process before exiting")
+    parser.add_argument("--batch-size", type=int, default=1100, help="Number of IDs to process before exiting")
     args = parser.parse_args()
 
     asyncio.run(run_crawler(args.start, args.end, args.workers, args.min_delay, args.max_delay, args.proxy, args.output, args.batch_size))
